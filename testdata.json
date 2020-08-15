@@ -11,5 +11,6 @@
         "password":"secret11"
     },
     "msgPrefix": "sending msg with random number-",
+    "msgWithSpecialChars": "sending msg with special chars: !#$%&'()*+,-./:;<=>?@[]^_`{|}~",
     "automationGroupTitle": "group-message-automation"
 }

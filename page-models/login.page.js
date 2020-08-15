@@ -16,7 +16,7 @@ class LoginPage {
             .click(this.nextButton)
             .typeText(this.password, password)
             .click(this.submitBtn)
-            .wait(5000) //UNEXPECTED VARIETY OF BEHAVIOR: using WAIT because sometimes loader shows sometimes it doesn't and sometimes it would show up twice.
+            .wait(5000)
             .expect(this.h3.exists).ok({ timeout: 50000 });
     }
 }

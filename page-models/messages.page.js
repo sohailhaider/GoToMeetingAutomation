@@ -27,7 +27,7 @@ class MessagesPage {
             .expect(this.sendMsgBtn.hasAttribute('disabled')).ok()
             .typeText(this.msgInput, msg)
             .expect(this.sendMsgBtn.hasAttribute('disabled')).notOk()
-            .click(this.sendMsgBtn);
+            .click(this.sendMsgBtn).wait(2000);
     }
 
     verifyMsgBtnAndSendMsgInGroup(msg) {
@@ -35,13 +35,13 @@ class MessagesPage {
             .expect(this.sendMsgBtn.hasAttribute('disabled')).ok()
             .typeText(this.groupMsgInput, msg)
             .expect(this.sendMsgBtn.hasAttribute('disabled')).notOk()
-            .click(this.sendMsgBtn);
+            .click(this.sendMsgBtn).wait(2000);
     }
 
     verifylastMsgInChat(title, msg) {
         return t
             .expect(this.lastMsgEntryTitle.textContent).eql(title)
-            .expect(this.lastMsgEntryText.textContent).contains(msg);
+            .expect(this.lastMsgEntryText.textContent).contains(msg).wait(2000);
     }
 
 }
