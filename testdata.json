@@ -9,5 +9,6 @@
         "displayName":"Test0a8d8 User6266",
         "email":"g2messenger-6266@jedix.com",
         "password":"secret11"
-    }
+    },
+    "msgPrefix": "sending msg with random number-"
 }
