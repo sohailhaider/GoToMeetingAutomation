@@ -5,6 +5,7 @@ class MessagesPage {
         this.chatsBtn = Selector("[title='Chats']");
         this.room = Selector("span[data-testid='room-name']");
         this.msgInput = Selector("div[role='textbox']");
+        this.groupMsgInput = Selector("div[role='combobox']");
         this.sendMsgBtn = Selector('[data-testid="message-submit-button"]');
         this.chatTitle = Selector('.contact-details');
 
@@ -17,7 +18,7 @@ class MessagesPage {
     openChatRoomWith(name){
         return t
             .click(this.chatsBtn)
-            .click(this.room.withText(name), {timeout: 5000})
+            .click(this.room.withText(name))
             .expect(this.chatTitle.textContent).eql(name);
     }
 
@@ -25,6 +26,14 @@ class MessagesPage {
         return t
             .expect(this.sendMsgBtn.hasAttribute('disabled')).ok()
             .typeText(this.msgInput, msg)
+            .expect(this.sendMsgBtn.hasAttribute('disabled')).notOk()
+            .click(this.sendMsgBtn);
+    }
+
+    verifyMsgBtnAndSendMsgInGroup(msg) {
+        return t
+            .expect(this.sendMsgBtn.hasAttribute('disabled')).ok()
+            .typeText(this.groupMsgInput, msg)
             .expect(this.sendMsgBtn.hasAttribute('disabled')).notOk()
             .click(this.sendMsgBtn);
     }

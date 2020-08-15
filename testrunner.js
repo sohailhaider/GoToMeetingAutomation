@@ -14,7 +14,7 @@ createTestCafe('localhost', 1337, 1338)
 			])
             .browsers(['chrome'])
             .reporter('list')
-            .run();
+            .run({skipJsErrors: true, selectorTimeout: 50000});
     })
     .then(failedCount => {
         console.log('Tests failed: ' + failedCount);
